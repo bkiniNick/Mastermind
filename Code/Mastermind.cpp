@@ -10,7 +10,13 @@ Mastermind::Mastermind(LinkedList<Combination>* _list)
 	int addedCombination = 0;
 
 	GetColorCombinations(colorsForACombination, x, addedCombination);
-
+	addedCombination = 0;
+	Iterator<Combination> iter = list->begin();
+	for (int i = 0; i < NB_POSSIBLE_COMBINATIONS; ++i) {
+		tabCombinations[addedCombination] = &iter;
+		++iter;
+		++addedCombination;
+	}
 	
 }
 
@@ -29,7 +35,7 @@ Mastermind::~Mastermind()
 	}
 	for (int i = 0; i < NB_POSSIBLE_COMBINATIONS; ++i) {
 		if (tabCombinations[i] != nullptr) {
-			delete tabCombinations[i];
+			delete (tabCombinations[i]);
 			tabCombinations[i] = nullptr;  // Facultatif, mais évite les double suppressions
 		}
 	}
@@ -231,8 +237,8 @@ void Mastermind::GetColorCombinations(Color combinaison[], int x, int addedCombi
 	 
 	if (x == COMBINATION_LENGTH)
 	{
-		tabCombinations[addedCombinations] = new Combination(combinaison[0], combinaison[1], combinaison[2], combinaison[3]);
-		list->add(new Combination(tabCombinations[addedCombinations]->getColor(0), tabCombinations[addedCombinations]->getColor(1), tabCombinations[addedCombinations]->getColor(2), tabCombinations[addedCombinations]->getColor(3)));
+		
+		list->add(new Combination(combinaison[0], combinaison[1], combinaison[2], combinaison[3]));
 
 		addedCombinations++;
 		x = 0;
