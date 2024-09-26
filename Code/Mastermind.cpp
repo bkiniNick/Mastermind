@@ -95,25 +95,7 @@ Combination* Mastermind::getElement(int index) const
 
 bool Mastermind::isPossibleCombination(Combination* _toValidate, Combination* _tried, short* _tabVerdicts)
 {
-	//A COMPLETER
-	//Vérifiez si la combinaison toValidate doit être gardée ou non de la liste, en fonction d'une combinaison essayée et d'un tableau de 4 verdicts.
-	//Pour chacune des couleurs présentes dans toValidate, 3 verdicts possibles doivent être pris en considération pour éléminer ou non la combinaison, 
-	//il s'agit de "Bonne couleur, bonne place" (valeur 1), "Bonne couleur, mauvaise place" (valeur 2) et "Mauvaise couleur" (valeur 3).
-
-	//Voici un ébauche d'algorithme qui devrait vous aider à compléter cette méthode:
-	//Pour chacune des couleurs de la combinaison toValidate, vérifiez:
-
-	//Si le verdict est 1 (Bonne couleur, bonne place) et que la combinaison de couleurs à valider n'a pas la couleur à la même place que 
-	//la combinaison essayée, il faut la retirer de la liste.
-
-	//Si le verdict est 2 (Bonne couleur, mauvaise place) et que la combinaison de couleurs à valider n'a pas la couleur à un autre emplacement que
-	//celui de la combinaison essayée, il faut la retirer de la liste.
-
-	//Si le verdict est 3 (Mauvaise couleur) et que la combinaison de couleurs à valider a la couleur, il faut la retirer de la liste.
-
-	//Retournez true si la combinaison est valide (respecte les verdicts) et false dans le cas contraire.
-
-
+	
 	bool keepCombination = true;
 
 	//TODO: Compléter l'algorithme ici
